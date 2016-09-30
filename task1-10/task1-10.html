@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>Task1-10</title>
+	<style type="text/css">
+		@media screen and (min-width: 640px){
+			.container {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+		}
+		@media screen and (max-width: 640px){
+			.container {
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-start;
+				flex-wrap: wrap;
+			}
+			.item4 {
+				order: -1;
+			}
+		}
+		.item {
+			width: 150px;
+			box-sizing: border-box;
+			border: 1px solid #f00;
+			padding: 20px;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.item1 {
+			height: 120px;
+		}
+		.item2 {
+			height: 100px;
+		}
+		.item3 {
+			height: 40px;
+		}
+		.item4 {
+			height: 200px;
+			border-color: #00f;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="item item1">item1</div>
+		<div class="item item2">item2</div>
+		<div class="item item3">item3</div>
+		<div class="item item4">item4</div>
+	</div>
+</body>
+</html>
