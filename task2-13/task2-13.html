@@ -25,10 +25,15 @@
 
         var handler = function(){
             var num = parseInt($("aqi-input").value);
+            console.log(typeof NaN);
+            console.log(!isNaN(num));
+            console.log(num>=0);
+            console.log(num<=1000);
             if((!isNaN(num)) && (num>=0) && (num<=1000)) {
                 $("aqi-display").innerHTML = num;
             }else{
-                $("aqi-display").innerHTML = "请重新输入";
+                //$("aqi-display").innerHTML = "请重新输入";
+                $("aqi-display").firstChild.nodeValue = "请重新输入";
             }
 
         };
