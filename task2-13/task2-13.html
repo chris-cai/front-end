@@ -42,7 +42,7 @@
         $("button").addEventListener("click",handler);
 
         $("aqi-input").addEventListener("keyup",function(event){
-            if(event.keyCode==13){
+            if(event.keyCode === 13){
                 handler();
             }
         });
