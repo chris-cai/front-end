@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>h5</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            -webkit-text-size-adjust: none;
+        }
+        html {
+            background-color: #f7f7f7;
+        }
+        body {
+            line-height:1.4;
+            background-color: #fff;
+        }
+        .app {
+            position: relative;
+            border-bottom:1px solid #cfcfcf;
+            padding:13px 10px;
+            display: -webkit-flex;
+            align-items: center;
+        }
+        .app_icon {
+            width:47px;
+            height:47px;
+            border-radius:8px;
+            overflow: hidden;
+            min-width:47px;//
+        }
+        .app_icon_img {
+            display: block;
+            max-width:100%;
+        }
+
+        .app_text {
+            margin-left: 9px;
+            margin-right: auto;
+        }
+        .app_text_title {
+            font-size: 18px;
+            color: #181818;
+        }
+        .app_text_summary {
+            font-size: 12px;
+        }
+        .app_button {
+            display: block;
+            font-size:13px;
+            padding: 4px 13px;
+            text-align: center;
+            color: #fff;
+            background-color: #3cba1a;
+            border-radius: 4px;
+            text-decoration: none;
+            min-width: 52px;
+        }
+        .app_label {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 44px;
+            height: 32px;
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAABACAMAAACpzkDwAAAAY1BMVEX////kNyDkNyDkNyDkNyDkNyDkNyDkNyDkNyDkNyD99vXkNyDkNyDkNyDkNyD1xcHkNyD////99vX76+r64d/41tT2y8j0wLzztK/xqKLvm5TtjYXrf3bqcGToX1HmTTzkNyDPEQg9AAAAEXRSTlMAESIzRFVmd4iZqqq7zN3u7uYy9NoAAAHASURBVHja1dXbkoIwEATQJtyXyxJFIKiE///KJSJCVhQ3ZB62H7Sssk6Nk8agt54ijXwG2EXzJHAxxuKkScAwx5KaRS702FBTbdQnuKtrI9V3sJbFV0rezR9aIWouNzcQrKs6fOHi9i74FPG+AiHD60zmnBFuhHjPJh7eZhVuN6sVMeATuO+bRr3Ksu234TzAdh4wV5048WYTznzgD3BfV93gnvsNOPWAz+FusWJev4GzT9kX8COdKav1uL1P+gLOfWAv3KofoT/gRejAABZPPf4FJwzYDTeqGxpc+IAZrK2i5hcdjh0Yw7IUChbV9C83w7kHmMOC3+BmePIkP/QLOHGwA+74cVxFxdszr2bYZLtLuFJrVbA8XU+3VY9wxrAPburH4V34QU5wDOyE720YYHkc740BNl/DEj6oCl/VKR7lCH+7sAGX0xVXXe/H+QUr8NOV5oAEjgESOAINHIIGDkAD25h3DbbjguLcVuEYNHACGjhzaOCcgQQuXNDAAWjgGDSwxYPTYRc0cAgaOAURzIhg24uY4BxEsEcEx6CBC4cIjkADkwwMkqqNMM3AoBoYVAODphIKZkRwSuTCxz/LDzuIyYMbR8EsAAAAAElFTkSuQmCC') no-repeat;
+            background-size: contain;
+        }
+
+    </style>
+</head>
+<body>
+<div class="app">
+    <div class="app_icon">
+        <img class="app_icon_img" src="http://www.meow.re/demo/screen-adaptation-in-mobileweb/icon.png">
+    </div>
+    <div class="app_text">
+        <h2 class="app_text_title">忍者必须死Ⅱ</h2>
+        <p class="app_text_summary">史上最萌的手游，安装量过10万。</p>
+    </div>
+    <a class="app_button" href="#">下载</a>
+    <i class="app_label"></i>
+</div>
+</body>
+</html>
