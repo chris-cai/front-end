@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>ife task</title>
+    <style>
+        ul {
+            padding-left: 0;
+        }
+        li {
+            list-style: none;
+            float: left;
+            padding:5px;
+            margin-left:5px;
+            background-color: #75D7D9;
+            color: peru;
+        }
+    </style>
 </head>
 <body>
+<ul></ul>
 <script>
     window.onload = function(){
 
@@ -12,9 +26,9 @@
                 links = '';
         for(var i = 1;i<=12;i++){
             var temp = 'task1-'+i;
-            links += '<a href='+baseUrl+temp+'/'+temp+'.html>'+temp+'</a>';
+            links += '<li><a href='+baseUrl+temp+'/'+temp+'.html>'+temp+'</a></li>';
         }
-        console.log(links);
+        document.getElementsByTagName('ul')[0].innerHTML = links;
 
     }
 </script>
