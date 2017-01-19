@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul {
+            margin:0;
+            padding:0;
+            margin-top:20px;
+        }
+        li {
+            list-style: none;
+            float: left;
+            padding:5px;
+            margin:3px;
+            background-color: #f00;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <input type="text" id="item">
+    <input type="button" id="left-in" value="left-in">
+    <input type="button" id="right-in" value="right-in">
+    <input type="button" id="left-out" value="left-out">
+    <input type="button" id="right-out" value="right-out">
+</form>
+<ul id="items"></ul>
+<script>
+    function $(id){
+        return document.getElementById(id);
+    }
+
+    function trim(s){
+        return s.replace(/^\s+|\s+$/g,"");
+    }
+
+    window.onload = function(){
+        //队列数据
+        var items = [];
+
+        $('left-in').onclick = function(){
+            var value = trim($('item').value);
+            if(value==''){
+                return false;
+            }
+            items.unshift(value);
+            renderItems(items);
+        }
+
+        $('right-in').onclick = function(){
+            var value = trim($('item').value);
+            if(value==''){
+                return false;
+            }
+            items.push(value);
+            renderItems(items);
+        }
+
+        $('left-out').onclick = function(){
+            if(items.length>0){
+                alert(items.shift());
+                renderItems(items);
+            }else{
+                console.log('无数据删除-left-out');
+            }
+
+        }
+
+        $('right-out').onclick = function(){
+            if(items.length>0){
+                alert(items.pop());
+                renderItems(items);
+            }else{
+                console.log('无数据删除-right-out');
+            }
+
+        }
+
+
+        $('items').addEventListener('click',function(e){
+            var e = e || window.event;
+            var target = e.target || e.srcElement;
+
+            if(target.tagName === 'li'.toUpperCase()){
+                var v = e.target.getAttribute('data-value');
+                alert(items.splice(v,1));
+                renderItems(items);
+            }
+        });
+
+        function renderItems(items){
+            var lis = '';
+            for(var i=0;i<items.length;i++){
+                lis += '<li data-value='+i+'>'+items[i]+'</li>';
+            }
+            $('items').innerHTML = lis;
+        }
+
+    }
+
+    /*
+    * 使用面向对象重新设计
+    * 数组使用方法
+    * 正则校验
+    * 事件代理
+    */
+
+
+</script>
+</body>
+</html>

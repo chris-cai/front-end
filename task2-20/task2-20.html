@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../task2-19/util.js"></script>
+    <style>
+        ul {
+            padding-left:0;
+        }
+        li {
+            list-style: none;
+            float: left;
+            padding: 5px;
+            color: #fff;
+            background-color: #3cba1a;
+            margin-left:5px;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <textarea id="input" placeholder="enter" cols="40" rows="4"></textarea>
+    <input type="button" value="insert" id="insert">
+    <input type="text" id="keyword">
+    <input type="button" value="search" id="search">
+</form>
+<ul id="items"></ul>
+<script>
+    window.onload = function(){
+        var data = [];
+
+        addEvent($('insert'),'click',function(){
+            var str = trim($('input').value);
+            if(str.length===0){
+                console.log('empty');
+                return false;
+            }
+            var arr = str.split(/[^\w\u4e00-\u9fa5]+/);
+            data = arr.filter(function(item){
+                if(item.length>0){
+                    return true;
+                }
+                return false;
+            });
+            renderData();
+
+        });
+
+        addEvent($("search"),'click',function(){
+            var v = trim($('keyword').value);
+            if(v.length===0){
+                console.log('search input empty');
+                return false;
+            }
+            renderData(v);
+        });
+
+        function renderData(){
+            if(data.length===0){
+                $('items').innerHTML = 'empty data';
+                return false;
+            }
+            console.log(arguments.length);
+
+            var lis = '';
+            for(var i=0,len=data.length;i<len;i++){
+                var temp = data[i];
+                if(arguments.length>0){
+                    var reg = new RegExp(arguments[0]);
+                    console.log(reg);
+                    if(reg.test(data[i])){
+                        temp = data[i].replace(reg,'<span style="color:red;">'+arguments[0]+'</span>');
+                        reg = null;
+                    }
+                }
+                lis += '<li>'+temp+'</li>';
+            }
+            $('items').innerHTML = lis;
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+ul {
+    padding-left:0;
+}
+
+li {
+    list-style: none;
+    float: left;
+    padding:5px;
+    background: burlywood;
+    color: purple;
+    margin-left:5px;
+}
