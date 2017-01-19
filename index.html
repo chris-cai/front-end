@@ -5,6 +5,18 @@
     <title>Title</title>
 </head>
 <body>
-ife 2016 task --- chris cai
+<script>
+    window.onload = function(){
+
+        var baseUrl = location.href,
+                links = '';
+        for(var i = 1;i<=12;i++){
+            var temp = 'task1-'+i;
+            links += '<a href='+baseUrl+temp+'/'+temp+'.html>'+temp+'</a>';
+        }
+        console.log(links);
+
+    }
+</script>
 </body>
 </html>
