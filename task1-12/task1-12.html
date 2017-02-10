@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3</title>
+    <style>
+        body {
+            margin:0;
+            padding:0;
+        }
+        table {
+            text-align: left;
+        }
+        tr th {
+            background-color: #000;
+            color: #fff;
+        }
+        tr > td:first-child:after {
+            content: '.';
+        }
+        tr:nth-child(2n+1) {
+            background-color: #ccc;
+        }
+        tr:nth-child(-n+4) {
+            color: #f00;
+        }
+
+        form {
+            margin:40px 0;
+        }
+        input {
+            width:200px;
+            border:1px solid #ccc;
+            transition: all .5s ease-in .2s;
+        }
+        input:focus {
+            width:300px;
+            border-color: dodgerblue;
+        }
+
+        .banner {
+            width:250px;
+            height:150px;
+            position: relative;
+            background-color: mediumpurple;
+        }
+        .banner ul {
+            margin:0;
+            padding:0;
+        }
+        .banner li {
+            display: block;
+        }
+        .sliders li {
+            width:250px;
+            height:150px;
+            position: absolute;
+            left:-100%;
+            top:0;
+        }
+        #slider-1 {
+            background-color: red;
+        }
+        #slider-2 {
+            background-color: green;
+        }
+        #slider-3 {
+            background-color: blue;
+        }
+        li:target {
+            left:0;
+            animation: slider-in .5s linear;
+        }
+        @keyframes slider-in {
+            from {
+                left:100%;
+            }
+            to {
+                left:0;
+            }
+        }
+        .btns {
+            position: absolute;
+            bottom:0;
+            right:0;
+            display: flex;
+            display: -webkit-flex;
+            z-index: 100;
+        }
+        .btns a {
+            display: block;
+            background-color: rgba(255,255,255,.5);
+            color: #fff;
+            margin:1px;
+            text-decoration: none;
+            padding:10px 14px;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <th>排名</th>
+        <th>网站</th>
+        <th>热度</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>百度前端技术学院</td>
+        <td>13000</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>百度前端技术学院</td>
+        <td>12000</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>百度前端技术学院</td>
+        <td>11000</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>百度前端技术学院</td>
+        <td>10000</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>百度前端技术学院</td>
+        <td>9000</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>百度前端技术学院</td>
+        <td>8000</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>百度前端技术学院</td>
+        <td>7000</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>百度前端技术学院</td>
+        <td>6000</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>百度前端技术学院</td>
+        <td>5000</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>百度前端技术学院</td>
+        <td>4000</td>
+    </tr>
+</table>
+
+<form>
+    <input type="text"/>
+</form>
+
+<div class="banner">
+    <ul class="sliders">
+        <li id="slider-1"></li>
+        <li id="slider-2"></li>
+        <li id="slider-3"></li>
+    </ul>
+    <div class="btns">
+        <a href="#slider-1">1</a>
+        <a href="#slider-2">2</a>
+        <a href="#slider-3">3</a>
+    </div>
+</div>
+</body>
+</html>
