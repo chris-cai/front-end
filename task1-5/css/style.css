@@ -11,9 +11,9 @@ body {
 }
 .clearfix:before,
 .clearfix:after {
-	height: 0;
-	display: block;
 	content: ".";
+	display: block;
+	height: 0;
 	visibility: hidden;
 }
 .clearfix:after {
@@ -25,7 +25,7 @@ body {
 
 /*头部*/
 header {
-	height: 60px;
+	height: 76px;
 	padding-left: 40px;
 	background-color: #333;
 }
@@ -33,7 +33,7 @@ header h1 {
 	float: left;
 	color: #f00;
 	font-size: 22px;
-	line-height: 60px;
+	line-height: 76px;
 }
 header nav {
 	float: right;
