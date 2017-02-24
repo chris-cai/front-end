@@ -10,3 +10,8 @@ li {
     color: purple;
     margin-left:5px;
 }
+
+.btn-danger {
+    background-color: #f00;
+    color: #fff;
+}

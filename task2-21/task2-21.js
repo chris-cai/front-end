@@ -11,18 +11,24 @@ window.onload = function(){
             }
 
             this.data.push(item);
-            console.log(item);
-            console.log(this.data);
+            this.unique();
             this.renderData();
-
         },
         handleDataItem:function(item){
             var itemArray = item.split(/[,\n\s]+/);
             return itemArray.length>0 ? itemArray[0] : '';
         },
+        unique:function(){
+            this.data = this.data.filter(function(item,index){
+                return this.data.indexOf(item)===index;
+            }.bind(this));
+            if(this.data.length>5){
+                this.data.shift();
+            }
+        },
         renderData:function(){
             $('list').innerHTML = this.data.map(function(item){
-                return '<li>'+item+'</li>';
+                return '<li data-item='+item+'>'+item+'</li>';
             }).join('');
         }
 
@@ -41,5 +47,22 @@ window.onload = function(){
             Queue.pushData(value);
         }
     });
+
+    delegateEvent($('list'),'li','mouseover',function(e){
+        e.target.innerHTML = '点击删除'+e.target.getAttribute('data-item');
+        // e.target.style.backgroundColor = '#f00';
+        // e.target.style.color = '#fff';
+        e.target.className = 'btn-danger';
+    });
+
+    delegateEvent($('list'),'li','mouseout',function(e){
+        e.target.innerHTML = e.target.getAttribute('data-item');
+        e.target.className = '';
+    });
+
+    delegateEvent($('list'),'li','click',function(e){
+        $('list').removeChild(e.target);
+    });
+
 
 }

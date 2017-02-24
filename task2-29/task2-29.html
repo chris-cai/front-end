@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 2-29</title>
+    <style>
+        form {
+            display: flex;
+            align-items: flex-start;
+            width:340px;
+            justify-content: space-between;
+        }
+        .control-item {
+            color: #aaa;
+        }
+        .control-item div {
+            font-size: 12px;
+        }
+        input {
+            margin:0;
+            padding: 0;
+            border:none;
+        }
+        input[type="text"] {
+            width:200px;
+            height:30px;
+            -webkit-border-radius:4px;
+            -moz-border-radius:4px;
+            border-radius:4px;
+            border:1px solid #bbb;
+        }
+        input[type="button"] {
+            height:34px;
+            padding:5px 20px;
+            background-color: dodgerblue;
+            color: #fff;
+        }
+        label {
+            height:30px;
+            line-height:30px;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <label for="name">名称</label>
+    <div class="control-item">
+        <input type="text" id="name">
+        <div>必填，长度为4-16个字符</div>
+    </div>
+    <input type="button" value="验证">
+</form>
+</body>
+</html>
