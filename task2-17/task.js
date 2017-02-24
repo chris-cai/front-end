@@ -146,6 +146,7 @@ function initCitySelector() {
         options += '<option>' + i + '</option>';
     }
     $("city-select").innerHTML = options;
+
     // 给select设置事件，当选项发生变化时调用函数citySelectChange
     $("city-select").addEventListener('change',function(){
         citySelectChange();
@@ -179,15 +180,17 @@ function $(id){
 
 function handleData(){
     var options = $("city-select").options;
+    var data = aqiSourceData[options[pageState.nowSelectCity+1].value];
+
     switch (pageState.nowGraTime){
         case 'day':
-            chartData = aqiSourceData[options[pageState.nowSelectCity+1].value];
+            chartData = data;
             break;
         case 'week':
-            chartData = generateWeekData(aqiSourceData[options[pageState.nowSelectCity+1].value]);
+            chartData = generateWeekData(data);
             break;
         case 'month':
-            chartData = generateMonthData(aqiSourceData[options[pageState.nowSelectCity+1].value]);
+            chartData = generateMonthData(data);
             break;
         default :
             chartData = {};

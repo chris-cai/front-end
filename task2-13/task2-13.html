@@ -39,7 +39,7 @@
         };
 //        val.replace(/[<>]/ig,"");//avoid XSS
 
-        $("button").addEventListener("click",handler);
+        $("button").addEventListener("click",handler,false);
 
         $("aqi-input").addEventListener("keyup",function(event){
             if(event.keyCode === 13){

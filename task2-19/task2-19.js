@@ -4,7 +4,7 @@
 
 window.onload = function(){
 
-    var reg = /^([1-9]|([1-9]\d+))$/;
+    var reg = /^([1-9]|([1-9]\d)|100)$/;
 
     // var reg = /^(([1-9]\d)|100)$/;
 
@@ -132,6 +132,21 @@ window.onload = function(){
     });
 
     Queue.renderItems();
+
+
+    // var arr = [3,23,45,13,11,44,2,46];
+    //
+    // for(var i=0; i<arr.length;i++){
+    //     for(var j=i;j<arr.length-1;j++){
+    //         if(arr[i]>arr[j]){
+    //             var temp = arr[i];
+    //             arr[i] = arr[j];
+    //             arr[j] = temp;
+    //         }
+    //     }
+    // }
+    // console.log(arr);
+    
 }
 
 

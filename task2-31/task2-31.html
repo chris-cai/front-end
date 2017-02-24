@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task2-31 - study or work</title>
+</head>
+<body>
+    <form>
+        <div id="radioButtons">
+            <label>
+                <input type="radio" name="choose" checked="checked" value="1">在校生
+            </label>
+            <label>
+                <input type="radio" name="choose" value="2">非在校生
+            </label>
+        </div>
+        <div id="step1">
+            <select id="city">
+                <option>北京</option>
+                <option selected="selected">上海</option>
+                <option>广州</option>
+            </select>
+
+            <select id="schools">
+            </select>
+        </div>
+        <div id="step2" style="display: none;">
+            <label for="area">就业单位
+                <input type="text" id="area" />
+            </label>
+        </div>
+    </form>
+<script>
+    var data = {
+        '北京':['北京大学','清华大学','人大'],
+        '上海':['复旦大学','上海交通大学','上海戏剧学院'],
+        '广州':['中山大学','华南理工大学'],
+    }
+
+    window.onload = function(){
+        var checked = 1;
+
+        function $(id){
+            return document.getElementById(id)
+        }
+
+        function renderSchool(){
+            var city = $('city').value;
+            console.log(city)
+
+            $('schools').innerHTML = data[city].map(function(item){
+                return '<option>'+item+'</option>';
+            }).join('')
+        }
+
+        renderSchool()
+
+        $('city').addEventListener('change',function(e){
+            renderSchool()
+        })
+
+        $('radioButtons').addEventListener('click',function(e){
+            var e = e || window.event;
+            var target = e.target || e.srcElement;
+            if(target && target.tagName.toUpperCase() === 'INPUT'){
+                changeChoice();
+            }
+        })
+
+        function changeChoice(){
+            var radios = document.getElementsByName('choose');
+
+            for(var i=0,len=radios.length;i<len;i++){
+                if(radios[i].checked){
+                    var v = radios[i].value;
+                    if(v == checked){
+                        return false;
+                    }else{
+                        $('step'+checked).style.display = 'none';
+                        $('step'+v).style.display = 'block';
+                        checked = v;
+                    }
+                }
+
+            }
+        }
+
+    }
+</script>
+</body>
+</html>

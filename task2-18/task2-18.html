@@ -5,9 +5,8 @@
     <title>Title</title>
     <style>
         ul {
-            margin:0;
             padding:0;
-            margin-top:20px;
+            margin:20px 0 0;
         }
         li {
             list-style: none;
@@ -84,7 +83,7 @@
             var e = e || window.event;
             var target = e.target || e.srcElement;
 
-            if(target.tagName === 'li'.toUpperCase()){
+            if(target && target.tagName === 'li'.toUpperCase()){
                 var v = e.target.getAttribute('data-value');
                 alert(items.splice(v,1));
                 renderItems(items);
@@ -93,7 +92,7 @@
 
         function renderItems(items){
             var lis = '';
-            for(var i=0;i<items.length;i++){
+            for(var i=0,len=items.length;i<len;i++){
                 lis += '<li data-value='+i+'>'+items[i]+'</li>';
             }
             $('items').innerHTML = lis;

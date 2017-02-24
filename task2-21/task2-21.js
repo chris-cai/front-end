@@ -61,8 +61,7 @@ window.onload = function(){
     });
 
     delegateEvent($('list'),'li','click',function(e){
-        $('list').removeChild(e.target);
+        e.target.parentNode.removeChild(e.target);
     });
-
 
 }

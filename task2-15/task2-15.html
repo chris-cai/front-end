@@ -25,7 +25,8 @@
 
 </ul>
 
-<button id="sort-btn">排序</button>
+<input type="button" id="sort-btn" value="排序" />
+<input type="button" id="refresh" value="刷新" />
 
 <script type="text/javascript">
     function $(id){
@@ -115,7 +116,7 @@
         var aqiData = getData();
         aqiData = sortAqiData(aqiData);
         render(aqiData);
-        $("sort-btn").disabled = "";
+        //$("sort-btn").disabled = "";
     }
 
 
@@ -125,6 +126,10 @@
             $("sort-btn").disabled = true;
             btnHandle();
         }
+
+        $("refresh").addEventListener('click',function(){
+            window.location.reload();
+        })
     }
 
     init();
