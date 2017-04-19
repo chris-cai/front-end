@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, tr, td {
+            border:1px solid #ccc;
+            border-collapse: collapse;
+        }
+        td {
+            width:70px;
+            text-align: center;
+            position: relative;
+        }
+        .arrow:before {
+            position: absolute;
+            right:1px;
+            top:2px;
+            content: '';
+            display: inline-block;
+            border-bottom: 8px solid #ccc;
+            border-left:8px solid transparent;
+            border-right:8px solid transparent;
+        }
+        .arrow:after{
+            position: absolute;
+            right:1px;
+            bottom:2px;
+            content: '';
+            display: inline-block;
+            border-top: 8px solid #ccc;
+            border-left:8px solid transparent;
+            border-right:8px solid transparent;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <table>
+        <tr>
+            <td class="arrow">语文</td>
+            <td>数学</td>
+            <td>英语</td>
+        </tr>
+
+        <tr>
+            <td>语文</td>
+            <td>数学</td>
+            <td>英语</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

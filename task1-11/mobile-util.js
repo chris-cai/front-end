@@ -116,6 +116,16 @@ window.mobileUtil = (function(win, doc) {
                 data[ $1 ] = $3;
             });
             return data;
+        },
+
+        searchParams: function(){
+            var href = win.location.search;
+            var reg = new RegExp("([^?=&]+)(=([^&]*))?","g"),
+                data = {};
+            href && href.replace(reg,function($0,$1,$2,$3){
+                data[$1] = $3;
+            })
+            return data;
         }
     };
 })(window, document);
